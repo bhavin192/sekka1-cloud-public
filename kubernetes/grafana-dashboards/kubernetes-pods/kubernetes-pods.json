@@ -586,10 +586,10 @@
         "multi": false,
         "name": "namespace",
         "options": [],
-        "query": "",
-        "refresh": 0,
+        "query": "label_values(kube_pod_info, namespace)",
+        "refresh": 1,
         "regex": "",
-        "sort": 0,
+        "sort": 2,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -597,22 +597,27 @@
         "useTags": false
       },
       {
+        "allValue": ".*",
         "current": {
-          "text": ".*",
-          "value": ".*"
+          "text": "All",
+          "value": "$__all"
         },
+        "datasource": "${DS_PROMETHEUS}",
         "hide": 0,
+        "includeAll": true,
         "label": null,
+        "multi": false,
         "name": "pod_name",
-        "options": [
-          {
-            "selected": true,
-            "text": "",
-            "value": ""
-          }
-        ],
-        "query": "",
-        "type": "constant"
+        "options": [],
+        "query": "label_values(kube_pod_info{namespace=\"$namespace\"}, pod)",
+        "refresh": 1,
+        "regex": "",
+        "sort": 2,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },

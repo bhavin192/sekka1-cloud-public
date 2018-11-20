@@ -2572,40 +2572,50 @@
         "type": "datasource"
       },
       {
-        "current": {
-          "text": ".*",
-          "value": ".*"
-        },
-        "hide": 0,
-        "label": null,
-        "name": "node",
-        "options": [
-          {
-            "selected": true,
-            "text": ".*",
-            "value": ".*"
-          }
-        ],
-        "query": ".*",
-        "type": "constant"
+	"allValue": ".*",
+	"current": {
+	  "text": "All",
+	  "value": "$__all"
+	},
+	"datasource": "${DS_PROMETHEUS}",
+	"hide": 0,
+	"includeAll": true,
+	"label": null,
+	"multi": false,
+	"name": "node",
+	"options": [],
+	"query": "label_values(kube_node_info, node)",
+	"refresh": 1,
+	"regex": "",
+	"sort": 2,
+	"tagValuesQuery": "",
+	"tags": [],
+	"tagsQuery": "",
+	"type": "query",
+	"useTags": false
       },
       {
-        "current": {
-          "text": ".*",
-          "value": ".*"
-        },
-        "hide": 0,
-        "label": null,
-        "name": "namespace",
-        "options": [
-          {
-            "selected": true,
-            "text": ".*",
-            "value": ".*"
-          }
-        ],
-        "query": ".*",
-        "type": "constant"
+	"allValue": ".*",
+	"current": {
+	  "text": "All",
+	  "value": "$__all"
+	},
+	"datasource": "${DS_PROMETHEUS}",
+	"hide": 0,
+	"includeAll": true,
+	"label": null,
+	"multi": false,
+	"name": "namespace",
+	"options": [],
+	"query": "label_values(kube_pod_info, namespace)",
+	"refresh": 1,
+	"regex": "",
+	"sort": 2,
+	"tagValuesQuery": "",
+	"tags": [],
+	"tagsQuery": "",
+	"type": "query",
+	"useTags": false
       }
     ]
   },
